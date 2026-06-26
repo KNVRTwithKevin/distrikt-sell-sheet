@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>DISTRIKT Sales Cheat Sheet | Internal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');
+
+  :root {
+    --bg-1: #F5F3FC;
+    --bg-2: #ECE9F8;
+    --card: #FFFFFF;
+    --card-soft: #FBFAFE;
+    --border: #EAE6F4;
+    --border-strong: #DCD6EE;
+    --text-primary: #16131F;
+    --text-secondary: #56536B;
+    --text-muted: #948FA8;
+    --accent: #7B4DFF;
+    --accent-deep: #6433DF;
+    --accent-soft: #F1ECFF;
+    --accent-glow: rgba(123, 77, 255, 0.30);
+    --grad: linear-gradient(135deg, #7B4DFF 0%, #B06BFF 100%);
+    --green: #12B07A; --green-soft: #E4F7EF;
+    --amber: #E08A0B; --amber-soft: #FCF0DC;
+    --red: #EF3F66; --red-soft: #FDE6EC;
+    --ink: #100D1A;
+    --t1: #7B4DFF; --t1-soft: #F1ECFF;
+    --t2: #5B6BFF; --t2-soft: #ECEEFF;
+    --t3: #B06BFF; --t3-soft: #F6ECFF;
+    --shadow-sm: 0 1px 2px rgba(23,20,31,0.05);
+    --shadow-md: 0 12px 32px -14px rgba(83,52,168,0.30);
+    --shadow-lg: 0 30px 70px -24px rgba(83,52,168,0.35);
+    --maxw: 1080px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px; right: -140px;
+    width: 520px; height: 520px;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(123,77,255,0.18), transparent 70%);
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(245,243,252,0.82);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 12px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .brand-mark { width: 22px; height: 22px; border-radius: 7px; background: var(--grad); box-shadow: var(--shadow-md); }
+  .nav-links { display: flex; gap: 6px; flex-wrap: wrap; }
+  .nav-links a {
+    font-size: 12.5px; font-weight: 600; color: var(--text-secondary);
+    text-decoration: none; padding: 7px 12px; border-radius: 8px;
+    transition: background 0.18s, color 0.18s;
+  }
+  .nav-links a:hover { background: var(--accent-soft); color: var(--accent-deep); }
+
+  /* INTERNAL BANNER */
+  .internal-tag {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--amber); background: var(--amber-soft);
+    padding: 5px 11px; border-radius: 99px;
+  }
+
+  section { padding: 56px 0; }
+  section + section { border-top: 1px solid var(--border); }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent-deep); background: var(--accent-soft);
+    border: 1px solid rgba(123,77,255,0.18);
+    padding: 7px 14px; border-radius: 99px;
+  }
+  .eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+
+  .section-title { font-weight: 800; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.12; letter-spacing: -0.03em; color: var(--ink); margin: 16px 0 12px; }
+  .section-sub { font-size: 16px; color: var(--text-secondary); max-width: 720px; line-height: 1.6; }
+
+  /* HERO */
+  .hero { padding: 64px 0 48px; }
+  .hero h1 {
+    font-weight: 800; font-size: clamp(30px, 4.6vw, 48px);
+    line-height: 1.08; letter-spacing: -0.035em; color: var(--ink);
+    margin: 20px 0 18px; max-width: 820px;
+  }
+  .hero h1 .hl { color: var(--accent); }
+  .hero-lede { font-size: 18px; color: var(--text-secondary); max-width: 700px; line-height: 1.6; margin-bottom: 10px; }
+  .hero-lede b { color: var(--text-primary); font-weight: 600; }
+
+  /* OPENING LINE CALLOUT */
+  .opener {
+    position: relative; overflow: hidden;
+    background: var(--ink); color: #fff;
+    border-radius: 22px; padding: clamp(32px, 4vw, 48px);
+    margin-top: 34px; box-shadow: var(--shadow-lg);
+  }
+  .opener::after {
+    content: ''; position: absolute; top: -120px; right: -80px;
+    width: 340px; height: 340px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(123,77,255,0.42), transparent 70%);
+    filter: blur(32px); pointer-events: none;
+  }
+  .opener .label { position: relative; z-index: 1; font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C8A8FF; margin-bottom: 16px; }
+  .opener p { position: relative; z-index: 1; font-size: clamp(17px, 2vw, 21px); line-height: 1.55; font-weight: 500; color: rgba(255,255,255,0.92); }
+  .opener p .pop { color: #fff; font-weight: 700; }
+
+  /* AT A GLANCE TABLE */
+  .glance-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); }
+  .glance-table th, .glance-table td { text-align: left; padding: 16px 18px; font-size: 14px; vertical-align: top; border-bottom: 1px solid var(--border); }
+  .glance-table th { background: var(--card-soft); font-weight: 700; color: var(--text-muted); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .glance-table tr:last-child td { border-bottom: none; }
+  .glance-table .tname { font-weight: 800; color: var(--ink); white-space: nowrap; }
+  .glance-table .price { font-weight: 700; color: var(--accent-deep); white-space: nowrap; }
+  .tier-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 7px; vertical-align: middle; }
+  .dot1 { background: var(--t1); } .dot2 { background: var(--t2); } .dot3 { background: var(--t3); }
+  .table-scroll { overflow-x: auto; }
+
+  /* TIER CARDS */
+  .tier-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 22px; padding: clamp(28px, 3.4vw, 44px);
+    box-shadow: var(--shadow-md); position: relative; overflow: hidden;
+  }
+  .tier-card + .tier-card { margin-top: 26px; }
+  .tier-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; }
+  .tier-card.tc1::before { background: linear-gradient(90deg, var(--t1), #B06BFF); }
+  .tier-card.tc2::before { background: linear-gradient(90deg, var(--t2), #8AA0FF); }
+  .tier-card.tc3::before { background: linear-gradient(90deg, var(--t3), #E0A0FF); }
+
+  .tier-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+  .tier-num { font-weight: 800; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 11px; border-radius: 99px; }
+  .tc1 .tier-num { color: var(--t1); background: var(--t1-soft); }
+  .tc2 .tier-num { color: var(--t2); background: var(--t2-soft); }
+  .tc3 .tier-num { color: var(--t3); background: var(--t3-soft); }
+  .tier-card h3 { font-weight: 800; font-size: clamp(22px, 3vw, 30px); letter-spacing: -0.02em; color: var(--ink); }
+
+  .tier-oneliner {
+    font-size: 17px; font-weight: 600; color: var(--text-primary);
+    background: var(--card-soft); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+    border-radius: 12px; padding: 16px 18px; margin: 16px 0 26px; line-height: 1.5;
+  }
+  .tc1 .tier-oneliner { border-left-color: var(--t1); }
+  .tc2 .tier-oneliner { border-left-color: var(--t2); }
+  .tc3 .tier-oneliner { border-left-color: var(--t3); }
+  .tier-oneliner .q { color: var(--text-muted); font-weight: 700; }
+
+  .tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .block-label { font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+  .tier-grid p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  .get-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .get-list li { display: flex; gap: 10px; font-size: 14px; color: var(--text-primary); line-height: 1.45; }
+  .get-list .ck { width: 19px; height: 19px; min-width: 19px; border-radius: 6px; background: var(--green-soft); color: var(--green); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; margin-top: 1px; }
+
+  .price-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .price-chip { background: var(--card-soft); border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; flex: 1; min-width: 160px; }
+  .price-chip .pk { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+  .price-chip .pv { font-size: 17px; font-weight: 800; color: var(--ink); }
+
+  .tells { background: var(--ink); border-radius: 16px; padding: 22px 24px; margin-top: 26px; }
+  .tells .block-label { color: #B9A8E8; }
+  .tells ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .tells li { font-size: 14.5px; color: rgba(255,255,255,0.92); line-height: 1.45; display: flex; gap: 10px; }
+  .tells li::before { content: '\201C'; color: #C8A8FF; font-weight: 800; font-size: 20px; line-height: 1; }
+  .tells li i { font-style: italic; }
+
+  .leads { margin-top: 22px; padding-top: 18px; border-top: 1px dashed var(--border-strong); font-size: 14px; color: var(--text-secondary); }
+  .leads b { color: var(--accent-deep); font-weight: 700; }
+
+  /* SPECTRUM */
+  .spectrum { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .stage { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 18px; box-shadow: var(--shadow-sm); }
+  .stage .snum { font-weight: 800; font-size: 12.5px; letter-spacing: 0.08em; color: var(--accent-deep); margin-bottom: 10px; }
+  .stage h4 { font-weight: 800; font-size: 15.5px; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 8px; }
+  .stage p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px; }
+  .stage .tag { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 9px; border-radius: 99px; }
+  .stage .tag.x1 { color: var(--t1); background: var(--t1-soft); }
+  .stage .tag.x2 { color: var(--t2); background: var(--t2-soft); }
+  .stage .tag.x3 { color: var(--t3); background: var(--t3-soft); }
+
+  /* TWO COL GENERIC */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .info-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 28px; box-shadow: var(--shadow-sm); }
+  .info-card h3 { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 6px; }
+  .info-card .sub { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
+  .info-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* OBJECTION */
+  .objection { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 26px 28px; box-shadow: var(--shadow-sm); }
+  .objection + .objection { margin-top: 16px; }
+  .objection .q { font-size: 15.5px; font-weight: 700; color: var(--ink); margin-bottom: 12px; display: flex; gap: 10px; }
+  .objection .q .badge { font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); background: var(--red-soft); padding: 4px 9px; border-radius: 7px; height: fit-content; white-space: nowrap; }
+  .objection .a { font-size: 14.5px; color: var(--text-secondary); line-height: 1.6; padding-left: 4px; border-left: 3px solid var(--green); padding-left: 14px; }
+  .objection .a b { color: var(--text-primary); font-weight: 600; }
+
+  /* ROLE SPLIT */
+  .role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .role-card { border-radius: 18px; padding: 28px; }
+  .role-you { background: var(--accent-soft); border: 1px solid rgba(123,77,255,0.22); }
+  .role-us { background: var(--card); border: 1px solid var(--border); }
+  .role-card h3 { font-weight: 800; font-size: 18px; color: var(--ink); margin-bottom: 16px; }
+  .role-card ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+  .role-card li { font-size: 14px; color: var(--text-primary); line-height: 1.45; display: flex; gap: 10px; }
+  .role-card li .ic { width: 19px; height: 19px; min-width: 19px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; margin-top: 1px; }
+  .role-you .ic { background: var(--accent); color: #fff; }
+  .role-us .ic { background: var(--ink); color: #fff; }
+
+  /* MOAT */
+  .moat { background: var(--ink); color: #fff; border-radius: 22px; padding: clamp(32px, 4vw, 52px); position: relative; overflow: hidden; box-shadow: var(--shadow-lg); }
+  .moat::after { content: ''; position: absolute; bottom: -140px; left: -80px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, rgba(176,107,255,0.40), transparent 70%); filter: blur(34px); }
+  .moat .eyebrow { position: relative; z-index: 1; color: #D7C7FF; background: rgba(123,77,255,0.20); border-color: rgba(123,77,255,0.35); }
+  .moat h2 { position: relative; z-index: 1; font-weight: 800; font-size: clamp(24px, 3.2vw, 34px); letter-spacing: -0.03em; margin: 18px 0 20px; max-width: 720px; }
+  .moat-points { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .moat-point h4 { font-size: 16px; font-weight: 800; color: #C8A8FF; margin-bottom: 8px; }
+  .moat-point p { font-size: 14.5px; color: rgba(255,255,255,0.82); line-height: 1.6; }
+
+  footer { padding: 40px 0 56px; }
+  .footer-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; font-size: 12.5px; color: var(--text-muted); }
+  .footer-inner a { color: var(--accent-deep); text-decoration: none; font-weight: 600; }
+
+  @media (max-width: 820px) {
+    .tier-grid { grid-template-columns: 1fr; gap: 20px; }
+    .spectrum { grid-template-columns: 1fr 1fr; }
+    .two-col, .role-grid, .moat-points { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 520px) {
+    .spectrum { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="brand-mark"></span>DISTRIKT Worldwide</div>
+    <div class="nav-links">
+      <a href="#tiers">The 3 Tiers</a>
+      <a href="#glance">At a Glance</a>
+      <a href="#spectrum">Deployment</a>
+      <a href="#privacy">Data Privacy</a>
+      <a href="#objections">Objections</a>
+      <a href="#moat">The Moat</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <span class="internal-tag">&#9679; Internal Use Only &middot; Sales Enablement</span>
+  <h1>How to sell DISTRIKT. <span class="hl">A cheat sheet to close meetings.</span></h1>
+  <p class="hero-lede">Every client is on a path to the same destination: a business where AI is not bolted on, but built in. We call it <b>AI-Native by Design</b>. That path runs through three tiers. Clients can enter at any point, and your job is to spot which one fits.</p>
+  <p class="hero-lede">Most companies have deployed AI. Almost none have built a system. <b>The difference is design.</b> A deployed tool does what you tell it. Designed AI infrastructure learns the business, compounds over time, and acts on its behalf.</p>
+
+  <div class="opener">
+    <div class="label">The opening line for any sales conversation</div>
+    <p>"You can hire an AI engineer. They'll connect your data, build something, and it'll work. <span class="pop">But in four months you'll have a system that only knows your company.</span> We've been running deployments across home services, insurance, nutraceuticals, and DTC brands for years. Every pattern we've seen, what predicts growth, what predicts waste, what turns around in 30 days versus months, that's in our system. <span class="pop">You're not buying the intelligence layer. You're buying everything we've learned running it across every client before you.</span>"</p>
+  </div>
+</header>
+
+<!-- AT A GLANCE -->
+<section id="glance">
+  <div class="wrap">
+    <span class="eyebrow">Tiers at a Glance</span>
+    <h2 class="section-title">The whole offering on one screen</h2>
+    <p class="section-sub" style="margin-bottom:28px;">Quick reference for qualifying budget and fit in the room. Pricing is a range to quote; DISTRIKT scopes the exact number.</p>
+    <div class="table-scroll">
+      <table class="glance-table">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>What it is</th>
+            <th>Best for</th>
+            <th>Timeline</th>
+            <th>Setup</th>
+            <th>Monthly</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tname"><span class="tier-dot dot1"></span>Tier 1<br>AI Utilization Sprint</td>
+            <td>First live AI workflow built inside their existing enterprise stack</td>
+            <td>Has AI tools, not seeing ROI</td>
+            <td>30 days</td>
+            <td class="price">$3K - $8K</td>
+            <td class="price">$1K - $1.5K</td>
+          </tr>
+          <tr>
+            <td class="tname"><span class="tier-dot dot2"></span>Tier 2<br>Intelligence Core</td>
+            <td>One unified data layer (KNVRT) leadership can query in real time</td>
+            <td>Data siloed, reports always stale</td>
+            <td>6 - 12 weeks</td>
+            <td class="price">$15K - $35K</td>
+            <td class="price">$2.5K - $4K</td>
+          </tr>
+          <tr>
+            <td class="tname"><span class="tier-dot dot3"></span>Tier 3<br>Agentic Revenue Architecture</td>
+            <td>Custom network of autonomous agents built on the Intelligence Core</td>
+            <td>Data connected, ready to automate</td>
+            <td>Scoped per engagement</td>
+            <td class="price">$50K - $150K</td>
+            <td class="price">$5K - $15K</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section id="tiers">
+  <div class="wrap">
+    <span class="eyebrow">The Three Tiers</span>
+    <h2 class="section-title">Tier by tier: what it is, who it's for, what to say</h2>
+    <p class="section-sub" style="margin-bottom:30px;">Each tier sells the next. Land where the prospect is, then the roadmap pulls them forward.</p>
+
+    <!-- TIER 1 -->
+    <div class="tier-card tc1">
+      <div class="tier-head">
+        <span class="tier-num">Tier 1</span>
+        <h3>AI Utilization Sprint</h3>
+      </div>
+      <div class="tier-oneliner"><span class="q">Say it like this:</span> "We come in hands-on and build your first live AI workflow inside whatever enterprise stack you're already running, Claude, Gemini, or CoPilot, in 30 days, fixed fee."</div>
+
+      <div class="tier-grid">
+        <div>
+          <div class="block-label">The problem it solves</div>
+          <p>Their team is running Claude Enterprise, Gemini, or Microsoft CoPilot. The license is live. The ROI isn't. Either the data isn't accessible, the workflows were never mapped, or nobody designed the handoff between AI output and human judgment. They're paying for a platform their team isn't fully using.</p>
+          <div class="block-label" style="margin-top:22px;">What we do</div>
+          <p>We build their first live, high-impact AI workflow directly inside their existing stack in 30 days. Fixed fee, fixed timeline. Their internal champion builds it with us, not handed a black box. They walk away with a working workflow, a documented playbook, and a roadmap for what comes next.</p>
+        </div>
+        <div>
+          <div class="block-label">What they get</div>
+          <ul class="get-list">
+            <li><span class="ck">&#10003;</span> Audit of current AI utilization across the team</li>
+            <li><span class="ck">&#10003;</span> Data access and blockers identified</li>
+            <li><span class="ck">&#10003;</span> Top workflow opportunities ranked by hours saved and revenue touched</li>
+            <li><span class="ck">&#10003;</span> One live, measured workflow built inside the existing stack</li>
+            <li><span class="ck">&#10003;</span> Documented SOP, owned by the client, no dependency on us</li>
+            <li><span class="ck">&#10003;</span> Prioritized roadmap of the next 5 workflow opportunities</li>
+          </ul>
+          <div class="block-label" style="margin-top:22px;">Pricing to quote</div>
+          <div class="price-row">
+            <div class="price-chip"><div class="pk">Setup</div><div class="pv">$3K - $8K</div></div>
+            <div class="price-chip"><div class="pk">Monthly</div><div class="pv">$1K - $1.5K</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tells">
+        <div class="block-label">Qualifying tell &mdash; listen for</div>
+        <ul>
+          <li><i>"We already have Claude/Gemini/CoPilot but the team isn't really using it."</i></li>
+          <li><i>"I honestly can't tell you what we've built with it."</i></li>
+          <li><i>"The data isn't accessible, or the team doesn't know where to start."</i></li>
+          <li><i>"I need to see proof before we commit to anything bigger."</i></li>
+        </ul>
+      </div>
+
+      <div class="leads"><b>Where it leads:</b> The roadmap handed off at the end becomes the scope for Tier 2. Once workflows are running, the natural question is: what if every system in your business fed into one intelligence layer?</div>
+    </div>
+
+    <!-- TIER 2 -->
+    <div class="tier-card tc2">
+      <div class="tier-head">
+        <span class="tier-num">Tier 2</span>
+        <h3>Intelligence Core (KNVRT)</h3>
+      </div>
+      <div class="tier-oneliner"><span class="q">Say it like this:</span> "We deploy our intelligence engine and build one unified data layer, a single brain your leadership team can query in real time instead of waiting on reports."</div>
+
+      <div class="tier-grid">
+        <div>
+          <div class="block-label">The problem it solves</div>
+          <p>Data lives in silos. Sales in one system, marketing in another, ops somewhere else. Leadership is making high-stakes decisions on reports that were stale before they hit the inbox. They have more data than ever and less confidence than they should.</p>
+          <div class="block-label" style="margin-top:22px;">What we do</div>
+          <p>We deploy KNVRT, our proprietary intelligence engine, and build a unified data layer connecting every environment the business runs on. The output is a single intelligence core leadership can query in real time. One master brain for the executive layer, with the ability to spin sub-brains for specific teams as the system matures. This is not another dashboard. It is the layer between their data and their decisions.</p>
+        </div>
+        <div>
+          <div class="block-label">What they get</div>
+          <ul class="get-list">
+            <li><span class="ck">&#10003;</span> KNVRT deployed and configured to their data environments</li>
+            <li><span class="ck">&#10003;</span> Unified data layer connecting CRM, ad platforms, analytics, ops, and finance</li>
+            <li><span class="ck">&#10003;</span> Executive-ready output (pipeline health, CAC trends, revenue risk, growth) in under 60 seconds</li>
+            <li><span class="ck">&#10003;</span> 2 to 3 revenue agents active from the AgRO baseline library</li>
+            <li><span class="ck">&#10003;</span> Master intelligence core plus sub-brain architecture ready to expand by team</li>
+            <li><span class="ck">&#10003;</span> Managed operations and continuous tuning</li>
+          </ul>
+          <div class="block-label" style="margin-top:22px;">Pricing to quote</div>
+          <div class="price-row">
+            <div class="price-chip"><div class="pk">Setup</div><div class="pv">$15K - $35K</div></div>
+            <div class="price-chip"><div class="pk">Monthly</div><div class="pv">$2.5K - $4K</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tells">
+        <div class="block-label">Qualifying tell &mdash; listen for</div>
+        <ul>
+          <li><i>"Our data lives in five different places and nobody has the full picture."</i></li>
+          <li><i>"By the time the report hits the table it's already stale."</i></li>
+          <li><i>"Leadership is flying blind, making calls on last week's numbers."</i></li>
+          <li><i>"We have AI tools but they don't talk to each other."</i></li>
+          <li><i>"I need real-time answers, not another dashboard."</i></li>
+        </ul>
+      </div>
+
+      <div class="leads"><b>Where it leads:</b> With the intelligence core running and data flowing cleanly, the business is ready to deploy autonomous agents. Tier 3 is where the system stops reporting and starts acting.</div>
+    </div>
+
+    <!-- TIER 3 -->
+    <div class="tier-card tc3">
+      <div class="tier-head">
+        <span class="tier-num">Tier 3</span>
+        <h3>Agentic Revenue Architecture</h3>
+      </div>
+      <div class="tier-oneliner"><span class="q">Say it like this:</span> "Once the intelligence core is running, we architect and deploy a custom network of autonomous agents built specifically for how that business generates revenue."</div>
+
+      <div class="tier-grid">
+        <div>
+          <div class="block-label">The problem it solves</div>
+          <p>They have the data. They have the intelligence layer. Now they need the system to act on it, without a human triggering every step. Media spend. Pipeline acceleration. Churn intervention. Forecast generation. These can't wait for a weekly report.</p>
+          <div class="block-label" style="margin-top:22px;">What we do</div>
+          <p>We architect and deploy a custom network of autonomous AI agents on top of their Intelligence Core. AgRO, our baseline agentic revenue operations suite, is the starting point. Each agent is forked and customized to match exactly how the business generates revenue. Every agent is trained on their data, their customers, their revenue motion. This is infrastructure built for one business specifically, the kind a competitor cannot replicate by hiring a developer.</p>
+        </div>
+        <div>
+          <div class="block-label">What they get</div>
+          <ul class="get-list">
+            <li><span class="ck">&#10003;</span> Full agentic infrastructure designed for their revenue motion</li>
+            <li><span class="ck">&#10003;</span> Sales Agent: routes high-intent signals into revenue tracks in real time</li>
+            <li><span class="ck">&#10003;</span> Strategy Agent: surfaces ranked growth and expansion opportunities</li>
+            <li><span class="ck">&#10003;</span> Churn Agent: forecasts attrition before it hits, with intervention points</li>
+            <li><span class="ck">&#10003;</span> Attribution Agent: identifies which channels drive retention</li>
+            <li><span class="ck">&#10003;</span> Custom agents scoped per engagement, plus a dedicated embedded architect</li>
+            <li><span class="ck">&#10003;</span> Full audit trail and governance, every agent decision logged and traceable</li>
+          </ul>
+          <div class="block-label" style="margin-top:22px;">Pricing to quote</div>
+          <div class="price-row">
+            <div class="price-chip"><div class="pk">Setup</div><div class="pv">$50K - $150K</div></div>
+            <div class="price-chip"><div class="pk">Monthly</div><div class="pv">$5K - $15K</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tells">
+        <div class="block-label">Qualifying tell &mdash; listen for</div>
+        <ul>
+          <li><i>"We need it to actually do things, not just surface insights."</i></li>
+          <li><i>"We want agents handling sales routing / churn / budget reallocation."</i></li>
+          <li><i>"Our data is connected, we just need the autonomous layer."</i></li>
+          <li><i>"We're ready to automate."</i></li>
+        </ul>
+      </div>
+
+      <div class="leads" style="border-top-color:var(--amber); "><b style="color:var(--amber);">Rep flag:</b> Tier 3 requires the Intelligence Core to already be in place, either built by us through Tier 2 or verifiably built elsewhere. If someone comes in wanting Tier 3 cold, flag it early and route the conversation through Tier 2 first.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPLOYMENT SPECTRUM -->
+<section id="spectrum">
+  <div class="wrap">
+    <span class="eyebrow">The Deployment Spectrum</span>
+    <h2 class="section-title">Four stages, mapped across the tiers</h2>
+    <p class="section-sub" style="margin-bottom:28px;">Clients move through these as the system matures, not as separate purchases but as a natural progression.</p>
+    <div class="spectrum">
+      <div class="stage">
+        <div class="snum">01</div>
+        <h4>AI Utilization Sprint</h4>
+        <p>First live workflow inside the existing enterprise AI stack.</p>
+        <span class="tag x1">Tier 1</span>
+      </div>
+      <div class="stage">
+        <div class="snum">02</div>
+        <h4>Guided Workflows</h4>
+        <p>Multiple recurring processes redesigned around the platform. Human triggers and reviews output.</p>
+        <span class="tag x1">Tier 1</span>
+      </div>
+      <div class="stage">
+        <div class="snum">03</div>
+        <h4>Workflow Chains</h4>
+        <p>Multi-step automated sequences. Human reviews final output only. Requires the Intelligence Core.</p>
+        <span class="tag x2">Tier 2</span>
+      </div>
+      <div class="stage">
+        <div class="snum">04</div>
+        <h4>Agentic Deployment</h4>
+        <p>Autonomous systems that monitor, decide, act, and loop. Full revenue infrastructure.</p>
+        <span class="tag x3">Tier 3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA PRIVACY -->
+<section id="privacy">
+  <div class="wrap">
+    <span class="eyebrow">Data Privacy Model</span>
+    <h2 class="section-title">Standard vs. Enterprise Isolated</h2>
+    <p class="section-sub" style="margin-bottom:28px;">Available at Tier 2 and Tier 3. Not a separate product, just a modifier on how client data interacts with the DISTRIKT intelligence network.</p>
+    <div class="two-col">
+      <div class="info-card">
+        <h3>Standard Engagement</h3>
+        <div class="sub">Standard tier rates</div>
+        <p>Client data flows through the KNVRT intelligence layer. Anonymized solution patterns are extracted and contribute to the cross-industry network. The client benefits from every prior deployment, every pattern and learning DISTRIKT has run before them.</p>
+      </div>
+      <div class="info-card">
+        <h3>Enterprise Isolated</h3>
+        <div class="sub">Premium multiplier (DISTRIKT scopes)</div>
+        <p>Client data stays fully private in their own environment. Zero contribution to the network. They still query against the anonymized intelligence DISTRIKT has accumulated across all other deployments, so they benefit from the network without contributing to it. Same model the enterprise LLM providers use.</p>
+      </div>
+    </div>
+    <div class="objection" style="margin-top:20px;">
+      <div class="q"><span class="badge">Objection</span> "I don't want my data shared."</div>
+      <div class="a">The answer is simple: <b>they don't have to.</b> They pay the enterprise rate, their data stays sovereign, and they still get the benefit of every deployment that came before them. The system still helps them. They just don't add to it.</div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIONS / POSITIONING -->
+<section id="objections">
+  <div class="wrap">
+    <span class="eyebrow">Objection Handling</span>
+    <h2 class="section-title">The pushback you'll hear, and the answer</h2>
+    <div style="margin-top:26px;">
+      <div class="objection">
+        <div class="q"><span class="badge">Objection</span> "Why not just hire an AI engineer to build this?"</div>
+        <div class="a">They can. The engineer will connect the data and build something that works. <b>But in four months they'll have a system that only knows their company.</b> DISTRIKT runs on a proprietary architecture refined across dozens of industries, on top of an intelligence network that gets smarter with every engagement. You're not selling the build. You're selling everything we've learned running it across every client before them.</div>
+      </div>
+      <div class="objection">
+        <div class="q"><span class="badge">Objection</span> "We already have AI tools, we just aren't using them well."</div>
+        <div class="a">That is exactly Tier 1. <b>The license is live, the ROI isn't.</b> We come in and build the first live workflow inside the stack they already pay for, in 30 days, fixed fee. Low lift, fast proof, then the roadmap shows them what's next.</div>
+      </div>
+      <div class="objection">
+        <div class="q"><span class="badge">Objection</span> "This sounds like a big commitment."</div>
+        <div class="a">It doesn't have to start big. <b>Clients can enter at any tier.</b> Most start with a fixed-fee Tier 1 Sprint to see proof before anything larger. The destination is the same; the entry point is wherever they're comfortable.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REP ROLE -->
+<section id="role">
+  <div class="wrap">
+    <span class="eyebrow">Your Lane</span>
+    <h2 class="section-title">What you do, and what DISTRIKT does</h2>
+    <p class="section-sub" style="margin-bottom:28px;">Set this expectation early. You open the door and hold the relationship. We handle everything technical.</p>
+    <div class="role-grid">
+      <div class="role-card role-you">
+        <h3>You (Strategic Partner)</h3>
+        <ul>
+          <li><span class="ic">&#10003;</span> Identify the right prospects in your network</li>
+          <li><span class="ic">&#10003;</span> Make the warm introduction</li>
+          <li><span class="ic">&#10003;</span> Facilitate and join the first call to qualify the tier</li>
+          <li><span class="ic">&#10003;</span> Support the relationship as it develops</li>
+        </ul>
+      </div>
+      <div class="role-card role-us">
+        <h3>DISTRIKT</h3>
+        <ul>
+          <li><span class="ic">&#10003;</span> Deep technical audits and sales engineering</li>
+          <li><span class="ic">&#10003;</span> Custom scoping, proposals, and contract negotiation</li>
+          <li><span class="ic">&#10003;</span> Full delivery, account management, and retention</li>
+          <li><span class="ic">&#10003;</span> Branded pitch materials, case studies, and one-pagers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOAT -->
+<section id="moat">
+  <div class="wrap">
+    <div class="moat">
+      <span class="eyebrow">Why DISTRIKT Is Different</span>
+      <h2>Two things working together that competitors cannot separate.</h2>
+      <div class="moat-points">
+        <div class="moat-point">
+          <h4>How we build</h4>
+          <p>DISTRIKT's agentic architecture, how we design, deploy, and govern AI agents, is proprietary. The frameworks, the autonomy models, the way agents are forked and trained to match a specific revenue motion, that is not off-the-shelf. It is years of iteration across real enterprise deployments with real accountability for outcomes.</p>
+        </div>
+        <div class="moat-point">
+          <h4>What that building produced</h4>
+          <p>Every deployment generates anonymized intelligence: what predicts growth, what predicts waste, what turns around in 30 days versus six months. That intelligence compounds inside our system. A new client's deployment inherits all of it. Any engineer can connect data. None can replicate the network.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="brand"><span class="brand-mark"></span>DISTRIKT Worldwide</div>
+    <div>Internal sales enablement &middot; Not for external distribution &middot; <a href="https://distriktww.com" target="_blank" rel="noopener">distriktww.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
